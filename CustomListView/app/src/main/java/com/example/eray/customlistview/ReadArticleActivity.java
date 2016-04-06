@@ -1,13 +1,9 @@
 package com.example.eray.customlistview;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
-
-import java.io.IOException;
 
 
 /**
@@ -18,6 +14,11 @@ public class ReadArticleActivity extends BaseActivity {
     TextView articleContent_TextView;
     Bundle savedInstanceState;
 
+    /**
+     *
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * @return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
        // setContentView(R.layout.read_article_layout);
@@ -46,7 +47,10 @@ public class ReadArticleActivity extends BaseActivity {
 
     }
 
-
+    /**
+     * Getting the Urls from extra
+     * @return String
+     */
     public String getUrlFromExtra(){
         String newString;
         if (savedInstanceState == null) {

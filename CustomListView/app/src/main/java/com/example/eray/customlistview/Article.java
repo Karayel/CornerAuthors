@@ -15,7 +15,6 @@ public class Article {
 
     public Article(){
 
-
     }
 
     public Article(int id , String header, String content, String date, Author author){

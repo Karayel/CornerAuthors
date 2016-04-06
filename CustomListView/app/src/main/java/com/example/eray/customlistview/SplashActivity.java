@@ -1,11 +1,8 @@
 package com.example.eray.customlistview;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -21,6 +18,11 @@ public class SplashActivity extends BaseActivity {
     TextView articleContent_TextView;
     Bundle savedInstanceState;
 
+    /**
+     * onCreate is used to start an activity
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * @return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
       //setContentView(R.layout.activity_splash);
@@ -60,6 +62,10 @@ public class SplashActivity extends BaseActivity {
         }, SPLASH_TIME_OUT);*/
     }
 
+    /**
+     * It prints html content
+     * @return Nothing
+     */
     public void printHtmlContent(){
         try {
             String content = getContentFromExtra();
@@ -73,6 +79,10 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
+    /**
+     * getting the content from extra
+     * @return String
+     */
     public String getContentFromExtra(){
         String newString;
         if (savedInstanceState == null) {

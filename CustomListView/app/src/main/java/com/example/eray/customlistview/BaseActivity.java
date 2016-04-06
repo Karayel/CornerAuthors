@@ -51,17 +51,17 @@ public class BaseActivity extends Activity {
 
     private static boolean isLaunch = true;
 
-    /**
-     *  Base layout node of this Activity.
-     * */
+    //Base layout node of this Activity.
     private DrawerLayout mDrawerLayout;
 
-    /**
-     * Drawer listner class for drawer open, close etc.
-     */
+    // Drawer listner class for drawer open, close etc.
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
-
+    /**
+     * onCreate is used to start an activity
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +101,11 @@ public class BaseActivity extends Activity {
                 R.string.drawer_open,       /* "open drawer" description for accessibility */
                 R.string.drawer_close)      /* "close drawer" description for accessibility */
         {
+            /**
+             * creates call to onPrepareOptionsMenu()
+             * @param view This is the first parameter to onDrawerClosed method
+             * return Nothing
+             */
             @Override
             public void onDrawerClosed(View drawerView) {
                 getActionBar().setTitle(listArray[position]);
@@ -108,6 +113,11 @@ public class BaseActivity extends Activity {
                 super.onDrawerClosed(drawerView);
             }
 
+            /**
+             * creates call to onPrepareOptionsMenu()
+             * @param drawerView This is the first parameter to onDrawerOpened method
+             * return Nothing
+             */
             @Override
             public void onDrawerOpened(View drawerView) {
                 mDrawerList.bringToFront();
@@ -202,6 +212,12 @@ public class BaseActivity extends Activity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * The action bar home/up action should open or close the drawer.
+     * ActionBarDrawerToggle will take care of this.
+     * @param item This is the first parameter to onOptionsItemSelected method
+     * @return type is boolean
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -220,7 +236,11 @@ public class BaseActivity extends Activity {
         }
     }
 
-    /* Called whenever we call invalidateOptionsMenu() */
+    /**
+     * Called whenever we call invalidateOptionsMenu()
+     * @param menu This is the first parameter to onPrepareOptionsMenu method
+     * @return type is onPrepareOptionsMenu
+     */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view

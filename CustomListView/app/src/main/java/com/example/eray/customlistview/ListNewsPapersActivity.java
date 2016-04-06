@@ -13,8 +13,15 @@ import java.util.List;
 
 
 public class ListNewsPapersActivity extends BaseActivity {
+
     ListView newsListView;
     List<String> images = new ArrayList<String>();
+
+    /**
+     * onCreate is used to start an activity
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * @return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +40,10 @@ public class ListNewsPapersActivity extends BaseActivity {
         createsNewPaperListMenu();
     }
 
+    /**
+     * Creating the list menu for new paper
+     * return Nothing
+     */
     public void createsNewPaperListMenu(){
 
         images.add("http://www.mathandchessturkey.com/images/cumhuriyet.jpg");

@@ -56,6 +56,11 @@ public class MainActivity extends BaseActivity {
     TextView search_EditText;
     private SwipeLayout swipeLayout;
 
+    /**
+     * onCreate is used to start an activity
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * @return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -104,6 +109,13 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+    /**
+     * Getting the all columns
+     * @param jsonUrl This is the first parameter to listFreshArticles method
+     * @param newpaper This is the second parameter to listFreshArticles method
+     * @return Nothing
+     */
     public void listFreshArticles(String jsonUrl,final String newpaper){
         JsonArrayRequest billionaireReq = new JsonArrayRequest(jsonUrl,
                 new Response.Listener<JSONArray>() {
@@ -155,6 +167,14 @@ public class MainActivity extends BaseActivity {
 
     private TextWatcher textWatcher = new TextWatcher() {
 
+        /**
+         *This provides to handle the event directly.
+         * @param s This is the first parameter to onTextChanged method
+         * @param start This is the secons parameter to onTextChanged method
+         * @param before This is the third parameter to onTextChanged method
+         * @param count This is the forth parameter to onTextChanged method
+         * @return Nothing
+         */
         @Override
         public void onTextChanged(CharSequence s, int start, int before,
                                   int count) {
@@ -174,6 +194,14 @@ public class MainActivity extends BaseActivity {
             listView.setAdapter(new CustomListAdapter(MainActivity.this, array_sort));
         }
 
+        /**
+         *
+         * @param s This is the first parameter to beforeTextChanged method
+         * @param start This is the second parameter to beforeTextChanged method
+         * @param count This is the first third to beforeTextChanged method
+         * @param after This is the first forth to beforeTextChanged method
+         * return Nothing
+         */
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count,
                                       int after) {
@@ -181,6 +209,10 @@ public class MainActivity extends BaseActivity {
 
         }
 
+        /**
+         *
+         * @param s This is the first parameter to beforeTextChanged method
+         */
         @Override
         public void afterTextChanged(Editable s) {
             // TODO Auto-generated method stub
@@ -188,6 +220,11 @@ public class MainActivity extends BaseActivity {
         }
     };
 
+    /**
+     * Creating the menu fot options
+     * @param menu This is the first parameter to onCreateOptionsMenu method
+     * @return type is booleadn
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);

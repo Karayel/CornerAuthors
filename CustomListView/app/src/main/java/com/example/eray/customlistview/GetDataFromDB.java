@@ -24,8 +24,11 @@ public class GetDataFromDB extends AppCompatActivity {
     TextView gorsel1;
     TextView gorsel2;
 
-
-
+    /**
+     * onCreate is used to start an activity
+     * @param savedInstanceState This is the first parameter to onCreate method
+     * return Nothing
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

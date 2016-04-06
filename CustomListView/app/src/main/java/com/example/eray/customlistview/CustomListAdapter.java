@@ -48,6 +48,12 @@ public class CustomListAdapter extends BaseAdapter {
     private List<ListItemElement> billionairesItems;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
+    /**
+     *It provides the default implementation of all methods in an event listener interface
+     * @param activity
+     * @param billionairesItems
+     * @return Nothing
+     */
     public CustomListAdapter(MainActivity activity, List<ListItemElement> billionairesItems) {
         this.activity = activity;
         this.billionairesItems = billionairesItems;
@@ -66,21 +72,42 @@ public class CustomListAdapter extends BaseAdapter {
         faved=true;
     }
 
+    /**
+     * getting The count
+     * @return type is integer
+     */
     @Override
     public int getCount() {
         return billionairesItems.size();
     }
 
+    /**
+     * getting The Item
+     * @param location
+     * @return type is Object
+     */
     @Override
     public Object getItem(int location) {
         return billionairesItems.get(location);
     }
 
+    /**
+     * get the Item's id
+     * @param position
+     * @return type is long
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    /**
+     * According to position gettting the view
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return type is View
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -243,8 +270,11 @@ public class CustomListAdapter extends BaseAdapter {
         return convertView;
     }
 
-
-
+    /**
+     * Read JSON Object from text file
+     * @return
+     * @throws JSONException
+     */
     public String readJSON() throws JSONException {
 
         try {
@@ -270,6 +300,12 @@ public class CustomListAdapter extends BaseAdapter {
         return null;
     }
 
+    /**
+     * Saving article to telephone in text file
+     * @param position
+     * @param holder
+     * @return
+     */
     private View.OnClickListener onEditListener(final int position, final ViewHolder holder) {
         return new View.OnClickListener() {
             @Override
@@ -320,15 +356,17 @@ public class CustomListAdapter extends BaseAdapter {
 
     }
 
-
-
+    /**
+     * Adding Authors to Favourite Authors Activity
+     * @param position
+     * @param holder
+     * @return
+     */
     private View.OnClickListener onDeleteListener(final int position, final ViewHolder holder) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //friends.remove(position);
-
-
                 //date article name authorName authorImage content
                 try {
                     FileOutputStream fileout=activity.openFileOutput("favoriteAuthors.txt", activity.MODE_APPEND);
@@ -405,6 +443,12 @@ public class CustomListAdapter extends BaseAdapter {
 
                 }
 
+                /**
+                 *
+                 * @param layout
+                 * @param leftOffset
+                 * @param topOffset
+                 */
                 @Override
                 public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {
                     Log.i("TEST", "on swiping");
